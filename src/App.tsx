@@ -9,7 +9,7 @@ function App() {
 
   const [open, setOpen] = useState<boolean>(false);
 
-  const isSafari = navigator.userAgent.toLowerCase().indexOf('safari/') > -1;
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
   const handleOpen = () => {
     setOpen(true);
