@@ -96,6 +96,9 @@ button {
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
   vertical-align: middle;
 }
@@ -105,7 +108,10 @@ button.big-button {
   border-radius: 1rem;
   border: 2px solid var(--btnShadeA);
   padding: 1rem 2rem;
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  -webkit-transition: all 175ms cubic-bezier(0, 0, 1, 1);
+  -o-transition: all 175ms cubic-bezier(0, 0, 1, 1);
   transition: all 175ms cubic-bezier(0, 0, 1, 1);
 }
 
@@ -113,6 +119,7 @@ button.big-button::before {
   background: var(--btnShadeC);
   border-radius: inherit;
   bottom: 0;
+  -webkit-box-shadow: 0 0 0 2px var(--btnShadeB);
   box-shadow: 0 0 0 2px var(--btnShadeB);
   content: "";
   height: 100%;
@@ -120,16 +127,34 @@ button.big-button::before {
   position: absolute;
   right: 0;
   top: 0;
+  -webkit-transform: translate3d(0, 0.75rem, -1rem);
   transform: translate3d(0, 0.75rem, -1rem);
+  -webkit-transition: all 175ms cubic-bezier(0, 0, 1, 1);
+  -o-transition: all 175ms cubic-bezier(0, 0, 1, 1);
   transition: all 175ms cubic-bezier(0, 0, 1, 1);
   width: 100%;
 }
 
 button.big-button:hover {
   background: var(--btnShadeD);
+  -webkit-transform: translate(0, 0.375rem);
+  -ms-transform: translate(0, 0.375rem);
   transform: translate(0, 0.375rem);
 }
 
 button.big-button:active {
+  -webkit-transform: translate(0rem, 0.75rem);
+  -ms-transform: translate(0rem, 0.75rem);
   transform: translate(0rem, 0.75rem);
+}
+
+button.safari-big-button {
+  background: var(--btnShadeE);
+  border-radius: 1rem;
+  border: 2px solid var(--btnShadeA);
+  padding: 1rem 2rem;
+}
+
+button.safari-big-button:hover {
+  background: var(--btnShadeD);
 }

@@ -9,6 +9,8 @@ function App() {
 
   const [open, setOpen] = useState<boolean>(false);
 
+  const isSafari = navigator.userAgent.toLowerCase().indexOf('safari/') > -1;
+
   const handleOpen = () => {
     setOpen(true);
   }
@@ -20,7 +22,7 @@ function App() {
   return (
     <>
       <div className="container">
-        <button className="big-button" onClick={handleOpen}>
+        <button className={isSafari ? "safari-big-button" : "big-button"} onClick={handleOpen}>
           MOSTRAR EPG
         </button>
       </div>
