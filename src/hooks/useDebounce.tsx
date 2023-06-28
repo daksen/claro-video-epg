@@ -6,15 +6,13 @@ interface DebounceProps<T> {
 }
 
 /**
- * This is a custom React hook that returns a debounced value of a given string after a specified delay
+ * This is a custom React hook that returns a debounced value of a given value after a specified delay
  * in milliseconds.
- * @param {string} value - The value that needs to be debounced.
+ * @param {T} value - The value that needs to be debounced.
  * @param {number} delay - The number of milliseconds to wait before updating the debounced
  * value.
- * @returns The hook returns the `debouncedValue`, which is the latest value of
- * the input string after a specified delay (in milliseconds) has passed since the last time the input
- * value was updated. This is useful for preventing unnecessary API calls or other
- * expensive operations from being triggered too frequently as the user types into the input field
+ * @returns The hook returns the `debouncedValue`, which is the latest value after a specified delay 
+ * (in milliseconds) has passed since the last time the value was updated.
  */
 function useDebounce<T>({ value, delay }: DebounceProps<T>) {
 
